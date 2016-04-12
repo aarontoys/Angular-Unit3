@@ -6,10 +6,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
+var db = require('./models')
 
 
 // *** routes *** //
 var routes = require('./routes/index.js');
+var artists = require('./routes/artists.js');
+var artworks = require('./routes/artworks.js');
 
 
 // *** express instance *** //
@@ -36,6 +39,8 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 // *** main routes *** //
 app.use('/', routes);
+app.use('/artists', artists);
+app.use('/artworks', artworks);
 
 
 // catch 404 and forward to error handler
