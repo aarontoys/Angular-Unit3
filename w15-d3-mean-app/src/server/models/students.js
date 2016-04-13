@@ -18,4 +18,4 @@ var StudentSchema = new Schema({
 
 var Student = mongoose.model('student', StudentSchema);
 
-module.exports =Student;
+module.exports = Student;
