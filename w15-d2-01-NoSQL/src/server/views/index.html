@@ -16,6 +16,14 @@
     <h1>{{ title }}</h1>
     <p>Welcome to {{ title }}</p>
 
+    {% for artist in artists %}
+    <p>{{artist.name}}</p>
+    <p>{{artist.imgUrl}}</p>
+    <img src="{{artist.imgUrl}}" width="150px" height="150px">
+    {% endfor %}
+
+    <p>here's a fucking p tag.</p>
+
   </div>
 
 {% endblock %}
