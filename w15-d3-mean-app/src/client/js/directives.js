@@ -17,5 +17,7 @@ app.directive('appTable', function () {
   return {
     restrict: 'EA',
     templateUrl: '../table.html'
+    link: function (scope, element, attrs) {
+      scope.viewStudent = function
   }
 });
