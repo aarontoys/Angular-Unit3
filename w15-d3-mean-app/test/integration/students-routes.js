@@ -6,6 +6,7 @@ var server = require('../../src/server/app');
 var should = chai.should();
 var testUtilities = require('../utilities');
 var testSeed = require('../../src/server/models/seeds/test-seed');
+var Students = require('../../src/server/models/students')
 
 chai.use(chaiHttp);
 
@@ -32,7 +33,6 @@ describe('student routes', function() {
       chai.request(server)
       .get('/students')
       .end(function(err, res) {
-        console.log(res.body.data);
         res.status.should.equal(200);
         res.type.should.equal('application/json');
         res.body.should.be.a('object');
@@ -59,10 +59,10 @@ describe('student routes', function() {
           res.body.should.be.a('object');
           res.body.should.have.property('data')
           res.body.status.should.equal('success')
-          res.body.data.length.should.equal(1);
-          res.body.data[0].fName.should.equal('Aaron');
-          res.body.data[0].lName.should.equal('Toys');
-          res.body.data[0].year.should.equal(1998);
+          // console.log(res.body);
+          res.body.data.fName.should.equal('Aaron');
+          res.body.data.lName.should.equal('Toys');
+          res.body.data.year.should.equal(1998);
         done();
         });
       })

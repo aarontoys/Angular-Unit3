@@ -11,46 +11,11 @@
   <body>
     <!-- sample angular code -->
     <div class="container" ng-controller="addStudentController">
-      <div class="row">
-        <form class="form col-md-4 col-md-offset-4" ng-submit="addStudent()">
-          <input ng-model="student.fName" type="text" class="form-control" placeholder="First Name" required><br>
-          <input ng-model="student.lName" type="text" class="form-control" placeholder="Last Name" required><br>
-          <select ng-model="student.year" class="form-control">
-            <option value=""  disabled selected>Please select a year</option>
-            <option value="2001">2001</option>
-            <option value="2002">2002</option>
-            <option value="2003">2003</option>
-            <option value="2004">2004</option>
-            <option value="2005">2005</option>
-            <option value="2006">2006</option>
-            <option value="2007">2007</option>
-         </select><br>
-          <button class="btn btn-primary" type="submit">Add Student</button>
-        </form>
-      </div>
+      <div app-form></div>
       <div class="row">
         <hr>
       </div>
-      <div class="row col-md-8 col-md-offset-2">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Year</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="student in students">
-              <td>{{ student.fName }}</td>
-              <td>{{ student.lName }}</td>
-              <td>{{ student.year }}</td>
-              <td><span class="glyphicon glyphicon glyphicon-remove"></span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <div app-table></div>
     </div>
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
